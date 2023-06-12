@@ -17,7 +17,7 @@ This repository provides tutorial code for Segmentation of Organs-at-Risk and Gr
 ```
 
 ### Requirements
-This code depends on [Pytorch](https://pytorch.org), [PyMIC][https://github.com/HiLab-git/PyMIC].
+This code depends on [Pytorch](https://pytorch.org), [PyMIC](https://github.com/HiLab-git/PyMIC).
 To install PyMIC and GeodisTK, run:
 ```
 pip install PYMIC

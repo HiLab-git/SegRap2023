@@ -64,7 +64,7 @@ pip install PYMIC
 
 ### Segmentation model based on nnUNet
 #### Postprocessing
-- Following `Tutorial/nnunet_baseline.ipynb`, you can obtain the final predictions based on the outputs from [nnUNet](https://github.com/MIC-DKFZ/nnUNet).
+- Following `Tutorial/nnunet_baseline.ipynb`, you can obtain the final predictions based on the outputs from [nnUNet](https://github.com/MIC-DKFZ/nnUNet). In addition, you also can use `Tutorial/preprocessing.py` for preprocessing firstly (details as mentioned in the above tutorial) and then train networks using `Tutorial/nnunet_baseline.ipynb`.
 
 
 ## 2. Evaluation for SegRap2023 Challenge

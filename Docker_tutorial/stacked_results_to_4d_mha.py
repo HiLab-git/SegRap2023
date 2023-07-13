@@ -2,7 +2,7 @@ import os
 import numpy as np
 import SimpleITK as sitk
 
-# download and unzip gtvs_output_example.zip and oars_output_example.zip to run this example.
+# download and unzip "Docker_tutorial/gtvs_output_example.zip" and "Docker_tutorial/oars_output_example.zip" to run this example.
 # # The mapping between the structures (OARs or GTVs) and the index of the 4D file (mha).
 oars_mapping_dict = {0: 'Brain',
                      1: 'BrainStem',

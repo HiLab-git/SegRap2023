@@ -2,16 +2,16 @@
 
 ## 1. Totorial for Algorithm Docker Image
 ### 1.1 Important input and output
-- For task1, the input dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/head-neck-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [45, *image_shape]. An example output is shown as `Docker_tutorial/oars_output_example.mha`.
+- For task1, the input dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/head-neck-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [45, *image_shape]. An example code and output is shown as `Docker_tutorial/stacked_results_to_4d_mha.py` and `Docker_tutorial/oars_output_example.mha`.
 
-- For task2, the dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/gross-tumor-volume-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [2, *image_shape]. An example output is shown as `Docker_tutorial/gtvs_output_example.mha`.
+- For task2, the dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/gross-tumor-volume-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [2, *image_shape]. An example code and output is shown as `Docker_tutorial/stacked_results_to_4d_mha.py` and `Docker_tutorial/gtvs_output_example.mha`.
 
 ### 1.2 Algorithm examples based on nnUNet
 We provide two algorithm examples based on nnUNet, which is only the baseline for two tasks. If your method is based on nnUNet, you can follow the example to generate predictions and run `sh export.sh` to generate an Algorithm Container Image in tar.gz format. The details about loading input, generating predictions, and saving output can be seen in the `process.py`. 
 
 You can download the example data and model weight from [GoogleDrive](https://drive.google.com/file/d/17hJz9hQ1sajsW0aEgmiydvL9bVchqipr/view?usp=sharing) and [BaiduNetDisk](https://pan.baidu.com/s/1lwGENM9R7z3791FxQoy7fQ?pwd=2023) to the folder `images` and  `weight`, respectively.
 ### 1.3 Algorithm examples based on others.
-If your method is not based on nnUNet, you can modify the function of `predict()` in `process.py` and other corresponding parts for inference. It's easy to read and modify, but please ensure the format of the output file (a 4D mha, the right mapping between the index of 4D file and OARs or GTVs.). We provided an example (`stacked_results_to_4d_mha.py`) to stack individual oars/gtvs predictions of a patient into a required 4d mha files.
+If your method is not based on nnUNet, you can modify the function of `predict()` in `process.py` and other corresponding parts for inference. It's easy to read and modify, but please ensure the format of the output file (a 4D mha, the right mapping between the index of 4D file and OARs or GTVs.). We provided an example (`Docker_tutorial/stacked_results_to_4d_mha.py`) to stack individual oars/gtvs predictions of a patient into a required 4d mha files.
 
 
 ## 2. How to submit the algorithm?

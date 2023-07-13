@@ -1,6 +1,28 @@
 # <div align=center> [SegRap2023](https://segrap2023.grand-challenge.org/)</div>
 
-## 1. Tutorial for SegRap2023 Challenge
+## 1. Totorial for Algorithm Docker Image
+### 1.1 Important input and output
+- For task1, the input dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/head-neck-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [45, *image_shape]. An example output is shown as `Docker_tutorial/oars_output_example.mha`.
+
+- For task2, the dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/gross-tumor-volume-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [2, *image_shape]. An example output is shown as `Docker_tutorial/gtvs_output_example.mha`.
+
+### 1.2 Algorithm examples based on nnUNet
+We provide two algorithm examples based on nnUNet, which is only the baseline for two tasks. If your method is based on nnUNet, you can follow the example to generate predictions and run `sh export.sh` to generate an Algorithm Container Image in tar.gz format. The details about loading input, generating predictions, and saving output can be seen in the `process.py`. 
+
+You can download the example data and model weight from [GoogleDrive](https://drive.google.com/file/d/17hJz9hQ1sajsW0aEgmiydvL9bVchqipr/view?usp=sharing) and [BaiduNetDisk](https://pan.baidu.com/s/1lwGENM9R7z3791FxQoy7fQ?pwd=2023) to the folder `images` and  `weight`, respectively.
+
+
+## 2. How to submit the algorithm?
+1. If you have not created your algorithm, you can go to https://segrap2023.grand-challenge.org/evaluation/challenge/algorithms/create/ to create an algorithm with 30GB memory.
+
+2. Upload your Algorithm Container Image, then wait for the container to be active.
+
+3. Go to the [SegRap2023 submit website](https://segrap2023.grand-challenge.org/evaluation/challenge/submissions/create/), choose the task and submit your Algorithm Image.
+
+4. After submitting, you can wait for the update of [Leaderboards](https://segrap2023.grand-challenge.org/evaluation/challenge/leaderboard/).
+
+
+## 3. Tutorial for SegRap2023 Challenge
 
 This repository provides tutorial code for Segmentation of Organs-at-Risk and Gross Tumor Volume of NPC for Radiotherapy Planning (SegRap2023) Challenge. Our code is based on [PyMIC](https://github.com/HiLab-git/PyMIC), a pytorch-based toolkit for medical image computing with deep learning, that is lightweight and easy to use. 
 
@@ -67,28 +89,9 @@ pip install PYMIC
 - Following `Tutorial/nnunet_baseline.ipynb`, you can obtain the final predictions based on the outputs from [nnUNet](https://github.com/MIC-DKFZ/nnUNet). In addition, you also can use `Tutorial/preprocessing.py` for preprocessing firstly (details as mentioned in the above tutorial) and then train networks using `Tutorial/nnunet_baseline.ipynb`.
 
 
-## 2. Evaluation for SegRap2023 Challenge
+## 4. Evaluation for SegRap2023 Challenge
 Run following command to get the quantitative evaluation results.
 ```bash
 python Eval/SegRap_Task001_DSC_NSD_Eval.py
 python Eval/SegRap_Task002_DSC_NSD_Eval.py
 ```
-
-## 3. Totorial for Algorithm Docker Image
-### 3.1 Important input and output
-- For task1, the input dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/head-neck-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [45, *image_shape]. An example output is shown as `Docker_tutorial/oars_output_example.mha`.
-
-- For task2, the dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/gross-tumor-volume-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [2, *image_shape]. An example output is shown as `Docker_tutorial/gtvs_output_example.mha`.
-
-### 3.2 Algorithm examples based on nnUNet
-We provide two algorithm examples based on nnUNet, which is only the baseline for two tasks. If your method is based on nnUNet, you can follow the example to generate predictions and run `sh export.sh` to generate an Algorithm Container Image in tar.gz format. The details about loading input, generating predictions, and saving output can be seen in the `process.py`. The example data and model weight can be downloaded from [GoogleDrive](https://drive.google.com/file/d/17hJz9hQ1sajsW0aEgmiydvL9bVchqipr/view?usp=sharing) and [BaiduNetDisk](https://pan.baidu.com/s/1lwGENM9R7z3791FxQoy7fQ?pwd=2023).
-
-
-## 4. How to submit the algorithm?
-1. If you have not created your algorithm, you can go to https://segrap2023.grand-challenge.org/evaluation/challenge/algorithms/create/ to create an algorithm with 30GB memory.
-
-2. Upload your Algorithm Container Image, then wait for the container to be active.
-
-3. Go to the [SegRap2023 submit website](https://segrap2023.grand-challenge.org/evaluation/challenge/submissions/create/), choose the task and submit your Algorithm Image.
-
-4. After submitting, you can wait for the update of [Leaderboards](https://segrap2023.grand-challenge.org/evaluation/challenge/leaderboard/).

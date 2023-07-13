@@ -10,7 +10,6 @@ from scipy.ndimage import map_coordinates
 from batchgenerators.utilities.file_and_folder_operations import *
 from collections import OrderedDict
 from pymic.io.image_read_write import *
-from processing_v3 import convert_multi_organs_to_one_hot_label, nii2array, convert_one_hot_label_to_multi_organs
 from utils import *
 
 def largestConnectComponent(binaryimg):

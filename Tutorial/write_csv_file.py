@@ -83,6 +83,9 @@ if __name__ == "__main__":
     fields      = ['image', 'image_contrast', 'label']
     
     base = 'config/data_OARs'
+    if not os.path.exists(base):
+        os.makedirs(base)
+        
     output_file = base + '/image_all.csv'
     create_csv_file(data_dir, output_file, fields)
 

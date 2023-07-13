@@ -73,3 +73,22 @@ Run following command to get the quantitative evaluation results.
 python Eval/SegRap_Task001_DSC_NSD_Eval.py
 python Eval/SegRap_Task002_DSC_NSD_Eval.py
 ```
+
+## 3. Totorial for Algorithm Docker Image
+### 3.1 Important input and output
+- For task1, the input dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/head-neck-segmentation/`. Note that the final prediction has to be a 4D .mha file, which shape is [45, *image_shape]. An example output is shown as `Docker_tutorial/oars_output_example.mha`.
+
+- For task2, the dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/gross-tumor-volume-segmentation/`. Note that the final prediction has to be a 4D .mha file, which shape is [2, *image_shape]. An example output is shown as `Docker_tutorial/gtvs_output_example.mha`.
+
+### 3.2 Algorithm examples based on nnUNet
+We provide two algorithm examples based on nnUNet, which is only the baseline for two tasks. If your method is based on nnUNet, you can follow the example to generate predictions and run `sh export.sh` to generate an Algorithm Container Image in tar.gz format. The details about loading input, generating predictions, and saving output can be seen in the `process.py`. The example data and model weight can be downloaded from [GoogleDrive](https://drive.google.com/file/d/17hJz9hQ1sajsW0aEgmiydvL9bVchqipr/view?usp=sharing) and [BaiduNetDisk](https://pan.baidu.com/s/1lwGENM9R7z3791FxQoy7fQ?pwd=2023).
+
+
+## 4. How to submit the algorithm?
+1. If you have not created your algorithm, you can go to https://segrap2023.grand-challenge.org/evaluation/challenge/algorithms/create/ to create an algorithm with 30GB memory.
+
+2. Upload your Algorithm Container Image, then wait for the container to be active.
+
+3. Go to the [SegRap2023 submit website](https://segrap2023.grand-challenge.org/evaluation/challenge/submissions/create/), choose the task and submit your Algorithm Image.
+
+4. After submitting, you can wait for the update of [Leaderboards](https://segrap2023.grand-challenge.org/evaluation/challenge/leaderboard/).

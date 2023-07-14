@@ -13,7 +13,7 @@ You can download the example data and model weight from [GoogleDrive](https://dr
 ### 1.3 Algorithm examples based on others.
 If your method is not based on nnUNet, you can modify the function of `predict()` in `process.py` and other corresponding parts for inference. It's easy to read and modify, but please ensure the format of the output file (a 4D mha, the right mapping between the index of 4D file and OARs or GTVs.). We provided an example (`Docker_tutorial/stacked_results_to_4d_mha.py`) to stack individual oars/gtvs predictions of a patient into a required 4d mha files.
 ### 1.4 Q&A.
-If you meet any questions when submitting your docker images, please email us ([Xiangde Luo](luoxd1996@gmail.com) or [Jia Fu](fujia98914@gmail.com )) at any time.
+If you meet any questions when submitting your docker images, please email us (`Xiangde Luo`:`luoxd1996@gmail.com`; `Jia Fu`:`fujia98914@gmail.com`) at any time.
 
 ## 2. How to submit the algorithm?
 1. If you have not created your algorithm, you can go to https://segrap2023.grand-challenge.org/evaluation/challenge/algorithms/create/ to create an algorithm with 30GB memory.

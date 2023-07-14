@@ -1,6 +1,6 @@
 # <div align=center> [SegRap2023](https://segrap2023.grand-challenge.org/)</div>
 
-## 1. Totorial for Algorithm Docker Image
+## 1. Totorial for Algorithm Docker Image ([official guideline of grand challenge](https://grand-challenge.org/documentation/test-and-deploy-your-container/))
 ### 1.1 Important input and output
 - For task1, the input dir is `/input/images/head-neck-ct/` (non-contrast-ct images) and `/input/images/head-neck-contrast-enhanced-ct/` (contrast-ct images). The output dir is `/output/images/head-neck-segmentation/`. Note that the final prediction has to be a 4D .mha file, which array shape is [45, *image_shape]. An example code and output is shown as `Docker_tutorial/stacked_results_to_4d_mha.py` and `Docker_tutorial/oars_output_example.mha`.
 

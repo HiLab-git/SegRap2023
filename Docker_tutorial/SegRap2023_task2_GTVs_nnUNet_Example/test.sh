@@ -26,7 +26,7 @@ docker run --rm --gpus all \
 
 docker run --rm \
         -v segrap2023_gtv_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
-        python:3.10-slim ls -al /output/images/head-neck-segmentation
+        python:3.10-slim ls -al /output/images/gross-tumor-volume-segmentation
 
 docker run --rm \
         -v segrap2023_gtv_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \

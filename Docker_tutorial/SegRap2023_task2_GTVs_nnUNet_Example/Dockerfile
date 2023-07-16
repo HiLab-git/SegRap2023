@@ -26,7 +26,7 @@ COPY --chown=user:user inference_code.py /opt/app/
 COPY --chown=user:user post_processing.py /opt/app/
 # COPY --chown=user:user images/ /opt/app/images/
 COPY --chown=user:user weight/ /opt/app/weight/
-COPY --chown=user:user output/ /opt/app/
+# COPY --chown=user:user output/ /opt/app/
 
 
 ENTRYPOINT [ "python", "-m", "process" ]

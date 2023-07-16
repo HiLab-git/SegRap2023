@@ -1,0 +1,1 @@
+Download a trained nnUNet model for your local machine testing [GoogleDrive](https://drive.google.com/file/d/17hJz9hQ1sajsW0aEgmiydvL9bVchqipr/view), [BaiduNetDisk](https://pan.baidu.com/s/1lwGENM9R7z3791FxQoy7fQ?pwd=2023).

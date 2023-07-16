@@ -8,7 +8,7 @@ VOLUME_SUFFIX=$(dd if=/dev/urandom bs=32 count=1 | md5sum | cut --delimiter=' ' 
 # Maximum is currently 30g, configurable in your algorithm image settings on grand challenge
 MEM_LIMIT="32g"
 
-docker volume create segrap2023_segmentationcontainer-output-$VOLUME_SUFFIX
+docker volume create segrap2023_oar_segmentationcontainer-output-$VOLUME_SUFFIX
 
 echo $VOLUME_SUFFIX
 # Do not change any of the parameters to docker run, these are fixed
@@ -21,19 +21,19 @@ docker run --rm --gpus all \
         --shm-size="128m" \
         --pids-limit="256" \
         -v $SCRIPTPATH/images/:/input/ \
-        -v segrap2023_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
-        segrap2023_segmentationcontainer
+        -v segrap2023_oar_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
+        segrap2023_oar_segmentationcontainer
 
 docker run --rm \
-        -v segrap2023_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
+        -v segrap2023_oar_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
         python:3.10-slim ls -al /output/images/head-neck-segmentation
 
 docker run --rm \
-        -v segrap2023_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
+        -v segrap2023_oar_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
         python:3.10-slim cat /output/results.json | python -m json.tool
 
 docker run --rm \
-        -v segrap2023_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
+        -v segrap2023_oar_segmentationcontainer-output-$VOLUME_SUFFIX:/output/ \
         -v $SCRIPTPATH/test/:/input/ \
         python:3.10-slim python -c "import json, sys; f1 = json.load(open('/output/results.json')); f2 = json.load(open('/input/expected_output.json')); sys.exit(f1 != f2);"
 
@@ -43,4 +43,4 @@ else
     echo "Expected output was not found..."
 fi
 
-docker volume rm segrap2023_segmentationcontainer-output-$VOLUME_SUFFIX
+docker volume rm segrap2023_oar_segmentationcontainer-output-$VOLUME_SUFFIX

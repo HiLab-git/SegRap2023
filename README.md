@@ -57,18 +57,6 @@ If you meet any questions when submitting your docker images, you can email us (
 
 This repository provides tutorial code for Segmentation of Organs-at-Risk and Gross Tumor Volume of NPC for Radiotherapy Planning (SegRap2023) Challenge. Our code is based on [PyMIC](https://github.com/HiLab-git/PyMIC), a pytorch-based toolkit for medical image computing with deep learning, that is lightweight and easy to use. 
 
-```
-@article{wang2023pymic,
-  title={PyMIC: A deep learning toolkit for annotation-efficient medical image segmentation},
-  author={Wang, Guotai and Luo, Xiangde and Gu, Ran and Yang, Shuojue and Qu, Yijie and Zhai, Shuwei and Zhao, Qianfei and Li, Kang and Zhang, Shaoting},
-  journal={Computer Methods and Programs in Biomedicine},
-  volume={231},
-  pages={107398},
-  year={2023},
-  publisher={Elsevier}
-}
-```
-
 ### Requirements
 This code depends on [Pytorch](https://pytorch.org), [PyMIC](https://github.com/HiLab-git/PyMIC).
 To install PyMIC and GeodisTK, run:
@@ -125,4 +113,24 @@ Run following command to get the quantitative evaluation results.
 ```bash
 python Eval/SegRap_Task001_DSC_NSD_Eval.py
 python Eval/SegRap_Task002_DSC_NSD_Eval.py
+```
+### Reference
+
+```
+@article{luo2023segrap2023,
+  title={SegRap2023: A Benchmark of Organs-at-Risk and Gross Tumor Volume Segmentation for Radiotherapy Planning of Nasopharyngeal Carcinoma},
+  author={Luo, Xiangde and Fu, Jia and Zhong, Yunxin and Liu, Shuolin and Han, Bing and Astaraki, Mehdi and Bendazzoli, Simone and Toma-Dasu, Iuliana and Ye, Yiwen and Chen, Ziyang and others},
+  journal={arXiv preprint arXiv:2312.09576},
+  year={2023}
+}
+
+@article{wang2023pymic,
+  title={PyMIC: A deep learning toolkit for annotation-efficient medical image segmentation},
+  author={Wang, Guotai and Luo, Xiangde and Gu, Ran and Yang, Shuojue and Qu, Yijie and Zhai, Shuwei and Zhao, Qianfei and Li, Kang and Zhang, Shaoting},
+  journal={Computer Methods and Programs in Biomedicine},
+  volume={231},
+  pages={107398},
+  year={2023},
+  publisher={Elsevier}
+}
 ```

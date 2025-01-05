@@ -121,7 +121,7 @@ python Eval/SegRap_Task002_DSC_NSD_Eval.py
   title={Segrap2023: A benchmark of organs-at-risk and gross tumor volume segmentation for radiotherapy planning of nasopharyngeal carcinoma},
   author={Luo, Xiangde and Fu, Jia and Zhong, Yunxin and Liu, Shuolin and Han, Bing and Astaraki, Mehdi and Bendazzoli, Simone and Toma-Dasu, Iuliana and Ye, Yiwen and Chen, Ziyang and others},
   journal={Medical Image Analysis},
- volume={80},
+  volume={80},
   pages={103447},
   year={2025},
   publisher={Elsevier}

@@ -117,20 +117,13 @@ python Eval/SegRap_Task002_DSC_NSD_Eval.py
 ### Reference
 
 ```
-@article{luo2023segrap2023,
-  title={SegRap2023: A Benchmark of Organs-at-Risk and Gross Tumor Volume Segmentation for Radiotherapy Planning of Nasopharyngeal Carcinoma},
+@article{luo2025segrap2023,
+  title={Segrap2023: A benchmark of organs-at-risk and gross tumor volume segmentation for radiotherapy planning of nasopharyngeal carcinoma},
   author={Luo, Xiangde and Fu, Jia and Zhong, Yunxin and Liu, Shuolin and Han, Bing and Astaraki, Mehdi and Bendazzoli, Simone and Toma-Dasu, Iuliana and Ye, Yiwen and Chen, Ziyang and others},
-  journal={arXiv preprint arXiv:2312.09576},
-  year={2023}
-}
-
-@article{wang2023pymic,
-  title={PyMIC: A deep learning toolkit for annotation-efficient medical image segmentation},
-  author={Wang, Guotai and Luo, Xiangde and Gu, Ran and Yang, Shuojue and Qu, Yijie and Zhai, Shuwei and Zhao, Qianfei and Li, Kang and Zhang, Shaoting},
-  journal={Computer Methods and Programs in Biomedicine},
-  volume={231},
-  pages={107398},
-  year={2023},
+  journal={Medical Image Analysis},
+ volume={80},
+  pages={103447},
+  year={2025},
   publisher={Elsevier}
 }
 ```

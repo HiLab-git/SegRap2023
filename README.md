@@ -114,6 +114,9 @@ Run following command to get the quantitative evaluation results.
 python Eval/SegRap_Task001_DSC_NSD_Eval.py
 python Eval/SegRap_Task002_DSC_NSD_Eval.py
 ```
+## 5. Code of Top Teams for SegRap2023 Challenge
+The code of top teams is available at: [SegRap2023_code_from_winning_teams](https://drive.google.com/file/d/1uI7idYOF87G6Bjx1tes_VSteXpbrT3kD/view?usp=drive_link).
+
 ### Reference
 
 ```
